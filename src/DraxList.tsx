@@ -395,7 +395,10 @@ export const DraxList = <T extends unknown>(
 			originalIndexes.forEach((originalIndex, index) => {
 				const { width: itemWidth = 0, height: itemHeight = 0 } = itemMeasurementsRef.current[originalIndex] ?? {};
 				const shift = shiftsRef.current[originalIndex];
-				let newTargetValue = { x: 0, y: 0 };;
+				if (!shift) {
+					return;
+				}
+				let newTargetValue = { x: 0, y: 0 };
 				if (index > fromIndex && index <= toIndex) {
 					newTargetValue = negOffset;
 				} else if (index < fromIndex && index >= toIndex) {
