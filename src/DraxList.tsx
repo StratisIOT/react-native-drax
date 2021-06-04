@@ -420,7 +420,7 @@ export const DraxList = <T extends unknown>(
 				}
 			});
 		},
-		[originalIndexes, horizontal],
+		[originalIndexes],
 	);
 
 	// Calculate absolute position of list item for snapback.
